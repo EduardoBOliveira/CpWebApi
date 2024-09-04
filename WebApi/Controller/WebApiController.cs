@@ -17,7 +17,7 @@ namespace WebApi.Controller
         }
 
         [HttpGet("rate")]
-        [Tags("Consulta de moedas")]
+        [Tags("Consulta de taxas atualizadas")]
         [ProducesResponseType(typeof(WebApiSettings), 200)]
         [ProducesResponseType(404)]
         public async Task<JsonResult> GetExchangeRate()
