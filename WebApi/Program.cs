@@ -5,17 +5,13 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configurar a injeção de dependência para WebApiSettings
 builder.Services.Configure<WebApiSettings>(
     builder.Configuration.GetSection("ExchangeRateAPI"));  
 
-// Configurar o HttpClient com injeção de dependência para o serviço de conversão
 builder.Services.AddHttpClient<IConversionRate, WebApiConversionRateService>();
 
-// Adicionar controladores
 builder.Services.AddControllers();
 
-// Configurar o Swagger com descrição detalhada
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -31,7 +27,6 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-// Configuração do Swagger para ambiente de desenvolvimento
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
