@@ -33,7 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Exchange Rate API V1");
-        c.RoutePrefix = string.Empty;  // Define a interface do Swagger na raiz da aplicação
+        c.RoutePrefix = string.Empty;  
     });
 }
 
