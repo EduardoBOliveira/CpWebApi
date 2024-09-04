@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Interfaces;
+using WebApi.Model;
 
 namespace WebApi.Controller
 {
@@ -16,6 +17,9 @@ namespace WebApi.Controller
         }
 
         [HttpGet("rate")]
+        [Tags("Consulta de moedas")]
+        [ProducesResponseType(typeof(WebApiSettings), 200)]
+        [ProducesResponseType(404)]
         public async Task<JsonResult> GetExchangeRate()
         {
             try
